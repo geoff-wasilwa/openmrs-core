@@ -91,4 +91,10 @@ public interface SerializationService extends OpenmrsService {
 	 * @return list of serializers currently loaded in openmrs
 	 */
 	public List<? extends OpenmrsSerializer> getSerializers();
+	
+	/*
+	 * Registers additional serializers from modules
+	 * params serializers - List of {@ OpenmrsSerializers} to be registered
+	 */
+	public void setSerializers(List<? extends OpenmrsSerializer> serializers);
 }

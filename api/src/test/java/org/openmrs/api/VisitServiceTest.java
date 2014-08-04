@@ -14,6 +14,7 @@
 package org.openmrs.api;
 
 import junit.framework.Assert;
+
 import org.apache.commons.lang.StringUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -33,6 +34,7 @@ import org.openmrs.test.TestUtil;
 import org.openmrs.test.Verifies;
 import org.openmrs.util.GlobalPropertiesTestHelper;
 import org.openmrs.util.OpenmrsConstants;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -61,11 +63,12 @@ public class VisitServiceTest extends BaseContextSensitiveTest {
 	
 	private GlobalPropertiesTestHelper globalPropertiesTestHelper;
 	
+	@Autowired
 	private VisitService visitService;
 	
 	@Before
 	public void before() {
-		visitService = Context.getVisitService();
+		//visitService = Context.getVisitService();
 		
 		// Allow overlapping visits. Ticket 3963 has introduced optional validation of start and stop dates
 		// based on concurrent visits of the same patient. Turning this validation on (i.e. not allowing
